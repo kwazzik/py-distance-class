@@ -25,12 +25,12 @@ class Distance:
             self.km += other
         return self
 
-    def __mul__(self, other: Union[int, float, "Distance"]) -> "Distance":
+    def __mul__(self, other: Union[int, float]) -> "Distance":
         if not isinstance(other, (int, float)):
             raise TypeError("Can multiply Distance only by int or float")
         return Distance(self.km * other)
 
-    def __truediv__(self, other: Union[int, float, "Distance"]) -> "Distance":
+    def __truediv__(self, other: Union[int, float]) -> "Distance":
         if not isinstance(other, (int, float)):
             raise TypeError("Can divide Distance only by int or float")
         return Distance(round(self.km / other, 2))
